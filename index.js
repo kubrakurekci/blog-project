@@ -40,10 +40,21 @@ app.post("/post-it", (req, res) => {
   }
 
 });
+const randomBlogs = [
+  "Chase after silly colored fish toys around the house hack who's the baby miaow then turn around and show you my bum. I will ruin the couch with my claws nyan fluffness ahh cucumber!. Put toy mouse in food bowl run out of litter box at full speed wake up wander around the house making large amounts of noise jump on top of your human's bed and fall asleep again ask for petting i will ruin the couch with my claws dismember a mouse and then regurgitate parts of it on the family room floor for eat from dog's food. Ptracy what a cat-ass-trophy! thinking longingly about tuna brine scratch me there, elevator butt, where is my slave? I'm getting hungry and cat jumps and falls onto the couch purrs and wakes up in a new dimension filled with kitty litter meow meow yummy there is a bunch of cats hanging around eating catnip .",
+  "Hide when guests come over need to check on human, have not seen in an hour might be dead oh look, human is alive, hiss at human, feed me and good now the other hand, too and throwup on your pillow dismember a mouse and then regurgitate parts of it on the family room floor so my slave human didn't give me any food so i pooped on the floor. Chase little red dot someday it will be mine!. Murr i hate humans they are so annoying adventure always stare at imaginary bug.",
+  "Leave hair on owner's clothes claw your carpet in places everyone can see - why hide my amazing artistic clawing skills? yet just going to dip my paw in your coffee and do a taste test - oh never mind i forgot i don't like coffee - you can have that back now sniff other cat's butt and hang jaw half open thereafter.",
+];
+let randomPostIndex1 = Math.floor(Math.random() * randomBlogs.length);
+const placeholderContent1 = randomBlogs[randomPostIndex1];
+let randomPostIndex2 = Math.floor(Math.random() * randomBlogs.length);
+const placeholderContent2 = randomBlogs[randomPostIndex2];
 app.get("/", (req, res) => {
-  res.render("main",
-    { blogs: blogs }
-  );
+ res.render("main", {
+   blogs: blogs,
+   placeholder: placeholderContent1,
+   placeholder2: placeholderContent2,
+ });
 });
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
@@ -127,6 +138,3 @@ app.post("/login-success", (req, res) => {
   }
   console.log(users);
 });
-app.get("/submit",(req,res)=>{
-
-})
