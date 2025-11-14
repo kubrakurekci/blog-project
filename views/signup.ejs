@@ -12,7 +12,12 @@
       crossorigin="anonymous"
     />
 </head>
-<body>
+  <body class="d-flex flex-column min-vh-100">
     <%- include("partials/header.ejs")  %>
-</body>
+    <main class="flex-fill">
+   
+<%- include("partials/sign-up.ejs") %>
+  </main>
+    <%- include("partials/footer.ejs")  %>
+  </body>
 </html>
